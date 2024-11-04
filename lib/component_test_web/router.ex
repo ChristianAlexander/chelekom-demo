@@ -18,6 +18,7 @@ defmodule ComponentTestWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    live "/pizza", PizzaOrderLive
   end
 
   # Other scopes may use custom stacks.
