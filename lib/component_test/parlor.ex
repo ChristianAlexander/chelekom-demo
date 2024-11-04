@@ -50,9 +50,14 @@ defmodule ComponentTest.Parlor do
 
   """
   def create_pizza(attrs \\ %{}) do
-    %Pizza{}
-    |> Pizza.changeset(attrs)
-    |> Repo.insert()
+    with {:ok, pizza} <-
+           %Pizza{}
+           |> Pizza.changeset(attrs)
+           |> Repo.insert() do
+      Phoenix.PubSub.broadcast(ComponentTest.PubSub, "pizza-orders", {:new_order, pizza})
+
+      {:ok, pizza}
+    end
   end
 
   @doc """
