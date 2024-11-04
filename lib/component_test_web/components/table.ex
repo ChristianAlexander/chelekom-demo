@@ -107,6 +107,9 @@ defmodule ComponentTestWeb.Components.Table do
   attr :thead_class, :string, default: nil, doc: "Adds custom CSS classes to the table header"
   attr :footer_class, :string, default: nil, doc: "Adds custom CSS classes to the table footer"
   attr :table_fixed, :boolean, default: false, doc: "Enables or disables the table's fixed layout"
+  attr :stream, :boolean,
+    default: false,
+    doc: "Enables Phoenix Stream support in the table body, if true"
   attr :text_position, :string, default: "left", doc: "Determines the element' text position"
 
   attr :rest, :global,
@@ -169,7 +172,7 @@ defmodule ComponentTestWeb.Components.Table do
               </.tr>
             </thead>
 
-            <tbody class="">
+            <tbody class="" phx-update={if @stream, do: "stream", else: ""} id={"#{@id}-body"}>
               <%= render_slot(@inner_block) %>
             </tbody>
 
@@ -258,7 +261,7 @@ defmodule ComponentTestWeb.Components.Table do
 
   def tr(assigns) do
     ~H"""
-    <tr class={["table-row", @class]} {@rest}>
+    <tr class={["table-row", @class]} id={@id} {@rest}>
       <%= render_slot(@inner_block) %>
     </tr>
     """
