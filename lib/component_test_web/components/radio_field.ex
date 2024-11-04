@@ -113,6 +113,7 @@ defmodule ComponentTestWeb.Components.RadioField do
           name={@name}
           id={@id}
           checked={@checked}
+          value={@value}
           class={[
             "bg-white radio-input rounded-full"
           ]}

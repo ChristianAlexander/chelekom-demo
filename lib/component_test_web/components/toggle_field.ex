@@ -89,6 +89,7 @@ defmodule ComponentTestWeb.Components.ToggleField do
     |> assign(field: nil, id: assigns.id || field.id)
     |> assign(:errors, Enum.map(errors, &translate_error(&1)))
     |> assign_new(:value, fn -> field.value end)
+    |> assign_new(:name, fn -> field.name end)
     |> toggle_field()
   end
 
@@ -106,7 +107,14 @@ defmodule ComponentTestWeb.Components.ToggleField do
       </div>
       <label for={@id} class="flex items-center cursor-pointer select-none w-fit">
         <div class="relative toggle-field-wrapper">
-          <input type="checkbox" checked={@checked} id={@id} class="peer sr-only" />
+          <input
+            type="checkbox"
+            checked={@checked}
+            id={@id}
+            name={@name}
+            value="true"
+            class="peer sr-only"
+          />
           <div class={[
             "rounded-full bg-[#e6e6e6] transition-all ease-in-out duration-500 toggle-field-base",
             color_class(@color)

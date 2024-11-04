@@ -134,6 +134,7 @@ defmodule ComponentTestWeb.Components.TextField do
     |> assign(field: nil, id: assigns.id || field.id)
     |> assign(:errors, Enum.map(errors, &translate_error(&1)))
     |> assign_new(:value, fn -> field.value end)
+    |> assign_new(:name, fn -> field.name end)
     |> text_field()
   end
 

@@ -97,6 +97,7 @@ defmodule ComponentTestWeb.Components.CheckboxField do
     |> assign(field: nil, id: assigns.id || field.id)
     |> assign(:errors, Enum.map(errors, &translate_error(&1)))
     |> assign_new(:value, fn -> field.value end)
+    |> assign_new(:name, fn -> field.name <> "[]" end)
     |> checkbox_field()
   end
 
@@ -118,6 +119,7 @@ defmodule ComponentTestWeb.Components.CheckboxField do
           name={@name}
           id={@id}
           checked={@checked}
+          value={@value}
           class={[
             "bg-white checkbox-input"
           ]}

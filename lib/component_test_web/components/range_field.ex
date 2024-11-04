@@ -118,6 +118,7 @@ defmodule ComponentTestWeb.Components.RangeField do
     |> assign(field: nil, id: assigns.id || field.id)
     |> assign(:errors, Enum.map(errors, &translate_error(&1)))
     |> assign_new(:value, fn -> field.value end)
+    |> assign_new(:name, fn -> field.name end)
     |> range_field()
   end
 
