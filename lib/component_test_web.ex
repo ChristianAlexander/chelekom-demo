@@ -84,8 +84,9 @@ defmodule ComponentTestWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components and translation
-      import ComponentTestWeb.CoreComponents
+      import ComponentTestWeb.CoreComponents, except: [button: 1]
       import ComponentTestWeb.Gettext
+      use ComponentTestWeb.Components.MishkaComponents
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
