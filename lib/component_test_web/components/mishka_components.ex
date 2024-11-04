@@ -14,6 +14,9 @@ defmodule ComponentTestWeb.Components.MishkaComponents do
 
       import ComponentTestWeb.Components.CheckboxField,
         only: [checkbox_field: 1, group_checkbox: 1]
+
+      import ComponentTestWeb.Components.Table, only: [table: 1, th: 1, tr: 1, td: 1]
+      import ComponentTestWeb.Components.Badge, only: [badge: 1]
     end
   end
 end
