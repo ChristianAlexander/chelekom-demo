@@ -19,6 +19,7 @@ defmodule ComponentTestWeb.Router do
 
     get "/", PageController, :home
     live "/pizza", PizzaOrderLive
+    live "/pizzas", PizzasLive
   end
 
   # Other scopes may use custom stacks.
