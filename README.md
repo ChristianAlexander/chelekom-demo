@@ -1,6 +1,6 @@
 # Mishka Chelekom Demo
 
-A demonstration of the Mishka Chelekom component library for Phoenix LiveView.
+A demonstration of the [Mishka Chelekom](https://mishka.tools/chelekom) component library for Phoenix LiveView.
 
 The companion repository to a YouTube video:
 
