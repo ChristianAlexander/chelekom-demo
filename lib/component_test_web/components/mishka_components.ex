@@ -10,6 +10,9 @@ defmodule ComponentTestWeb.Components.MishkaComponents do
       import ComponentTestWeb.Components.Button,
         only: [button_group: 1, button: 1, input_button: 1, button_link: 1]
 
+      import ComponentTestWeb.Components.Blockquote,
+        only: [blockquote: 1]
+
       import ComponentTestWeb.Components.Fieldset, only: [fieldset: 1]
 
       import ComponentTestWeb.Components.CheckboxField,
