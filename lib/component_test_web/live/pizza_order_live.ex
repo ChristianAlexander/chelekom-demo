@@ -109,7 +109,7 @@ defmodule ComponentTestWeb.PizzaOrderLive do
         {:noreply,
          socket
          |> put_flash(:info, "Pizza Ordered!")
-         |> redirect(to: ~p"/")}
+         |> redirect(to: ~p"/pizzas")}
 
       {:error, %Ecto.Changeset{} = changeset} ->
         {:noreply, assign(socket, form: to_form(changeset))}
